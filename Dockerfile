@@ -6,6 +6,7 @@ LABEL Description="This image is for the service build environment which require
 # Service Build Dependencies
 # - git required for go get
 RUN apk add --no-cache git \
+    && go get golang.org/x/text/language \
     && go get github.com/newrelic/go-agent
 
 ENTRYPOINT ["/bin/sh"]
